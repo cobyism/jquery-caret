@@ -7,11 +7,11 @@
 
 (function($) {
   $.fn.caret = function(index){
-    if (index){
+    if (typeof index === "undefined"){
+      return this[0].selectionStart;
+    } else {
       this[0].focus();
       return this[0].setSelectionRange(index, index);
-    } else {
-      return this[0].selectionStart;
     }
   }
 })(jQuery);
