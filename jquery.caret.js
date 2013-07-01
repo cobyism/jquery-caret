@@ -14,4 +14,12 @@
       return this[0].setSelectionRange(index, index);
     }
   }
+  $.fn.caretSelection = function(start, end){
+    if (typeof start === "undefined" && typeof end === "undefined"){
+      return [this[0].selectionStart, this[0].selectionEnd];
+    } else {
+      this[0].focus();
+      return this[0].setSelectionRange(start, end);
+    }
+  }
 })(jQuery);
